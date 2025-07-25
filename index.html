@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lakshmi Narayanan P | Portfolio</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+            rel="stylesheet" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: "Inter", sans-serif;
+                line-height: 1.6;
+                background: rgb(18, 16, 16);
+                color: white;
+                padding: 20px;
+                max-width: 800px;
+                margin: auto;
+                opacity: 0;
+                animation: fadeIn 1s ease forwards;
+            }
+            h1,
+            h2,
+            h3 {
+                color: white;
+                margin-top: 30px;
+                transform: translateY(20px);
+                opacity: 0;
+                animation: slideUp 0.6s ease forwards;
+            }
+            h1 {
+                animation-delay: 0.2s;
+            }
+            h2 {
+                animation-delay: 0.4s;
+            }
+            h3 {
+                animation-delay: 0.6s;
+            }
+            a {
+                color: #0077cc;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            a:hover {
+                color: #005fa3;
+            }
+            ul {
+                list-style: disc;
+                padding-left: 20px;
+            }
+            .section {
+                margin-bottom: 40px;
+                opacity: 0;
+                transform: translateY(30px);
+                animation: fadeInUp 0.6s ease forwards;
+            }
+            .section:nth-of-type(1) {
+                animation-delay: 0.3s;
+            }
+            .section:nth-of-type(2) {
+                animation-delay: 0.4s;
+            }
+            .section:nth-of-type(3) {
+                animation-delay: 0.5s;
+            }
+            .section:nth-of-type(4) {
+                animation-delay: 0.6s;
+            }
+            .section:nth-of-type(5) {
+                animation-delay: 0.7s;
+            }
+            .section:nth-of-type(6) {
+                animation-delay: 0.8s;
+            }
+
+            .header-links a {
+                margin-right: 10px;
+                display: inline-block;
+                transform: scale(1);
+                transition: transform 0.2s ease;
+            }
+            .header-links a:hover {
+                transform: scale(1.1);
+            }
+            .project {
+                margin-bottom: 20px;
+            }
+            .vol{
+              margin-bottom: 13px;
+            }
+            @keyframes fadeIn {
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes slideUp {
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Lakshmi Narayanan P</h1>
+            <p>Software Engineer</p>
+            <div class="header-links">
+                <a
+                    href="https://www.linkedin.com/in/lakshmi-narayanan-p-54511b336/"
+                    >LinkedIn</a
+                >
+                <a href="mailto:planar2006@gmail.com">Email</a>
+                <a href="https://github.com/plan28-06">GitHub</a>
+            </div>
+        </header>
+        <br />
+        <p>Doing this in a hurry ! Will make it look cool later :) .</p>
+        <section class="section">
+            <h2>Summary</h2>
+            <p>
+                Enthusiastic computer science undergrad familiar with
+                technologies like React, Node.js, Express, PostgreSQL, and
+                Python. Eager to solve real-world problems and contribute
+                meaningfully to impactful projects.
+            </p>
+        </section>
+        <section class="section">
+            <h2>Education</h2>
+            <p>
+                <strong>Shiv Nadar University</strong><br />
+                B.Tech in Computer Science Engineering<br />
+                CGPA: 9.13 / 10 | Aug 2023 - Present | Chennai, India
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Coursework</h2>
+            <ul>
+                <li>Data Structures</li>
+                <li>Operating Systems</li>
+                <li>Analysis of Algorithms</li>
+                <li>Object-Oriented Programming</li>
+                <li>Software Engineering</li>
+                <li>Database Management Systems</li>
+                <li>Distrubuted Systems</li>
+                <li>Computer Networks</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <h3>Languages</h3>
+            <p>Python, Java, JavaScript, C, C++, SQL, HTML, CSS</p>
+            <h3>Frameworks & Libraries</h3>
+            <p>ReactJS, NodeJS, ExpressJS, EJS, PassportJS</p>
+            <h3>Tools & Tech</h3>
+            <p>PostgreSQL, Prisma ORM, Git, GitHub, Linux, Webpack, VS Code</p>
+        </section>
+
+        <section class="section">
+            <h2>Projects</h2>
+
+            <div class="project">
+                <h3>File Uploader</h3>
+                <p>
+                    <a href="https://github.com/plan28-06/file_uploader"
+                        >GitHub</a
+                    >
+                    |
+                    <a href="https://file-uploader-n6s5.onrender.com/">Live</a>
+                </p>
+                <ul>
+                    <li>
+                        Engineered a full-stack file management platform using
+                        Express.js for the backend and EJS for dynamic
+                        server-side rendering.
+                    </li>
+                    <li>
+                        Integrated robust user authentication via Passport.js,
+                        supporting both traditional login and OAuth2.0 (Google,
+                        GitHub).
+                    </li>
+                    <li>
+                        Enabled secure cloud-based file handling with Cloudinary
+                        for uploads, storage, and retrieval.
+                    </li>
+                    <li>
+                        Modeled and managed structured data in PostgreSQL with
+                        Prisma ORM, and delivered a responsive UI using CSS
+                        media queries.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>Contact Management REST API</h3>
+                <p>
+                    <a href="https://github.com/plan28-06/Contacts_REST_API"
+                        >GitHub</a
+                    >
+                </p>
+                <ul>
+                    <li>
+                        Designed and implemented a RESTful API for comprehensive
+                        contact management, supporting full CRUD operations.
+                    </li>
+                    <li>
+                        Deployed MySQL in a Docker container with Docker volumes
+                        to ensure persistent data storage
+                    </li>
+                    <li>
+                        Conducted thorough testing of all API endpoints and
+                        workflows using Postman to validate functionality and
+                        reliability.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>Cricket Score Updater Bot</h3>
+                <p>
+                    <a href="https://github.com/plan28-06/Cricket_Score_Updater"
+                        >GitHub</a
+                    >
+                </p>
+                <ul>
+                    <li>
+                        Empowered cricket enthusiasts with instant live score
+                        notifications, minimizing disruption from manual score
+                        checks
+                    </li>
+                    <li>
+                        Implemented real-time web scraping with Beautiful Soup
+                        (BS4), pulling match details from Cricbuzz.
+                    </li>
+                    <li>
+                        Streamlined WhatsApp delivery via Selenium automation,
+                        scheduling score updates every five minutes without user
+                        intervention.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>Shopping Cart Web App</h3>
+                <p>
+                    <a href="https://github.com/plan28-06/Shopping_Cart"
+                        >GitHub</a
+                    >
+                    | <a href="https://shoppingcart-2806.netlify.app/">Live</a>
+                </p>
+                <ul>
+                    <li>
+                        Built an end-to-end shopping cart application with
+                        ReactJS, focusing on real-time product management.
+                    </li>
+                    <li>
+                        Integrated client-side navigation using React Router DOM
+                        for smooth transitions between pages without page
+                        reloads.
+                    </li>
+                    <li>
+                        Obtained product data dynamically by using the Fake
+                        Store API
+                    </li>
+                    <li>Ensured responsive design using CSS media queries.</li>
+                </ul>
+            </div>
+
+            <div class="project">
+                <h3>CV App</h3>
+                <p>
+                    <a href="https://github.com/plan28-06/CVapp">GitHub</a> |
+                    <a href="https://cvapp2806.netlify.app/">Live</a>
+                </p>
+                <ul>
+                    <li>
+                        Constructed a React-based CV builder with live-edit
+                        capabilities, instantly previewing changes as users
+                        input details.
+                    </li>
+                    <li>
+                        Utilized React hooks for efficient state management.
+                    </li>
+                    <li>
+                        Styled the app with CSS and media queries, ensuring it
+                        adapts cleanly across devices
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Extracurricular</h2>
+            <p><strong>SNUC Coding Club</strong> – Member since Aug 2023</p>
+            <p><strong>Karate</strong> – Black Belt since May 2015</p>
+        </section>
+
+        <section class="section">
+            <h2>Volunteering</h2>
+            <p class="vol">
+                <strong>National Service Scheme - Member since Aug 2023</strong>
+            </p>
+            <p>
+                Participated in multiple cleaning campaigns on campus, promoting
+                a cleaner environment.
+            </p>
+            <p>
+                Engaged in beach cleaning initiatives to support community and
+                promote environmental health.
+            </p>
+            <p>
+                Attended environmental talks, which enhanced my awareness of
+                sustainability issues and the importance of conservation.
+            </p>
+        </section>
+    </body>
+</html>
