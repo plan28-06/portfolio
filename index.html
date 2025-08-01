@@ -1,759 +1,748 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Lakshmi Narayanan P</title>
-        <!-- Tailwind CSS -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Google Fonts: Inter for body, Montserrat for headings -->
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap"
-            rel="stylesheet" />
-        <!-- Font Awesome for Icons -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lakshmi Narayanan P</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-        <style>
-            /* Define custom colors and fonts */
-            :root {
-                --color-bg-dark: #121212;
-                --color-bg-card: #1f1f1f;
-                --color-text-light: #e0e0e0;
-                --color-accent: #00bfff;
-                --color-accent-hover: #4dd5ff;
-            }
+    <style>
+        /* Define custom colors and fonts */
+        :root {
+            --color-bg-dark: #121212;
+            --color-bg-card: #1f1f1f;
+            --color-text-light: #e0e0e0;
+            --color-accent: #00bfff;
+            --color-accent-hover: #4dd5ff;
+        }
 
-            body {
-                font-family: "Inter", sans-serif;
-                background-color: var(--color-bg-dark);
-                color: var(--color-text-light);
-            }
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-light);
+        }
 
-            /* General Styles for the Theme */
-            .card-bg {
-                background-color: var(--color-bg-card);
-            }
-            .text-accent {
-                color: var(--color-accent);
-            }
-            .border-accent {
-                border-color: var(--color-accent);
-            }
-            .tag-bg {
-                background-color: #333;
-            }
-            .tag-text {
-                color: var(--color-text-light);
-            }
+        /* General Styles for the Theme */
+        .card-bg {
+            background-color: var(--color-bg-card);
+        }
+        .text-accent {
+            color: var(--color-accent);
+        }
+        .border-accent {
+            border-color: var(--color-accent);
+        }
+        .tag-bg {
+            background-color: #333;
+        }
+        .tag-text {
+            color: var(--color-text-light);
+        }
 
-            /* Navbar Styles */
-            .navbar {
-                @apply sticky top-0 z-50 bg-black bg-opacity-70 backdrop-blur-sm shadow-md py-4;
-            }
-            .navbar-link {
-                @apply relative text-gray-400 hover:text-accent transition-colors duration-300;
-            }
-            .navbar-link::after {
-                content: "";
-                display: block;
-                width: 0;
-                height: 2px;
-                background: var(--color-accent);
-                transition: width 0.3s ease;
-                position: absolute;
-                bottom: -5px;
-                left: 0;
-            }
-            .navbar-link:hover::after,
-            .navbar-link.active::after {
-                width: 100%;
-            }
+        /* Navbar Styles */
+        .navbar {
+            @apply sticky top-0 z-50 bg-black bg-opacity-70 backdrop-blur-sm shadow-md py-4;
+        }
+        .navbar-link {
+            @apply relative text-gray-400 hover:text-accent transition-colors duration-300;
+        }
+        .navbar-link::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        .navbar-link:hover::after,
+        .navbar-link.active::after {
+            width: 100%;
+        }
 
-            a.live-btn:hover {
-                background: white !important;
-                color: #14a2d1 !important;
-                box-shadow: 0 4px 24px 0 rgba(0, 191, 255, 0.3);
-                text-decoration: underline;
-            }
+        a.live-btn:hover {
+            background: white !important;
+            color: #14a2d1 !important;
+            box-shadow: 0 4px 24px 0 rgba(0, 191, 255, 0.3);
+            text-decoration: underline;
+        }
 
-            /* Animations */
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
             }
-            @keyframes slideInFromBottom {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+            to {
+                opacity: 1;
             }
-
-            /* Apply initial animation state */
-            .animate-on-scroll {
+        }
+        @keyframes slideInFromBottom {
+            from {
                 opacity: 0;
                 transform: translateY(20px);
-                transition: opacity 0.8s ease-out, transform 0.8s ease-out;
             }
-            .animate-on-scroll.is-visible {
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
-            .animate-on-scroll h2::after {
-                content: "";
-                display: block;
-                width: 0;
-                height: 3px;
-                background: var(--color-accent);
-                transition: width 0.8s ease-out;
-                margin-top: 5px;
-            }
-            .animate-on-scroll.is-visible h2::after {
-                width: 100%;
-            }
-            /* Timeline for Education */
-            .timeline {
-                position: relative;
-                padding-left: 20px;
-            }
-            .timeline::before {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 2px;
-                background-color: var(--color-accent);
-            }
-            .timeline-item {
-                position: relative;
-                padding-left: 40px;
-                margin-bottom: 40px;
-            }
-            .timeline-item::before {
-                content: "";
-                position: absolute;
-                left: -8px;
-                top: 5px;
-                width: 18px;
-                height: 18px;
-                background-color: var(--color-accent);
-                border-radius: 50%;
-                border: 3px solid var(--color-bg-dark);
-                z-index: 1;
-            }
-            .education-date {
-                font-size: 1rem;
-                font-weight: 600;
-                color: var(--color-accent);
-                margin-bottom: 0.5rem;
-            }
-        </style>
-    </head>
-    <body class="p-4 sm:p-8">
-        <!-- Navbar -->
-        <nav
-            class="navbar hidden sm:flex justify-between items-center px-4 sm:px-8 max-w-4xl mx-auto">
-            <a href="#hero" class="text-xl font-bold text-accent"
-                >Lakshmi Narayanan P</a
+        }
+
+        /* Apply initial animation state */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll h2::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 3px;
+            background: var(--color-accent);
+            transition: width 0.8s ease-out;
+            margin-top: 5px;
+        }
+        .animate-on-scroll.is-visible h2::after {
+            width: 100%;
+        }
+        /* Timeline for Education */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--color-accent);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 40px;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            background-color: var(--color-accent);
+            border-radius: 50%;
+            border: 3px solid var(--color-bg-dark);
+            z-index: 1;
+        }
+        .education-date {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+    <nav
+        class="navbar hidden sm:flex justify-between items-center px-4 sm:px-8 max-w-4xl mx-auto">
+        <a href="#hero" class="text-xl font-bold text-accent"
+            >Lakshmi Narayanan P</a
+        >
+        <div class="flex space-x-8">
+            <a href="#about" class="navbar-link active">About</a>
+            <a href="#projects" class="navbar-link">Projects</a>
+            <a href="#skills" class="navbar-link">Skills</a>
+            <a href="#education" class="navbar-link">Education</a>
+            <a href="#extracurriculars" class="navbar-link"
+                >Extracurriculars</a
             >
-            <div class="flex space-x-8">
-                <a href="#about" class="navbar-link active">About</a>
-                <a href="#projects" class="navbar-link">Projects</a>
-                <a href="#skills" class="navbar-link">Skills</a>
-                <a href="#education" class="navbar-link">Education</a>
-                <a href="#extracurriculars" class="navbar-link"
-                    >Extracurriculars</a
-                >
-            </div>
-        </nav>
+        </div>
+    </nav>
 
-        <!-- Main Container -->
-        <div class="max-w-4xl mx-auto space-y-12 mt-4 sm:mt-0">
-            <!-- Hero/Header Section -->
-            <section id="hero" class="text-center py-20">
-                <div class="space-y-4 animate-on-scroll is-visible">
-                    <h1 class="text-5xl font-bold text-gray-100">
-                        Lakshmi Narayanan P
-                    </h1>
-                    <p class="text-xl text-gray-400">
-                        Software Engineer
-                    </p>
-                    <div class="flex justify-center space-x-6 pt-4">
-                        <a
-                            href="https://www.linkedin.com/in/lakshmi-narayanan-p-54511b336/"
-                            target="_blank"
-                            class="text-gray-400 hover:text-accent transition-colors duration-300"
-                            ><i class="fab fa-linkedin-in text-2xl"></i
-                        ></a>
-                        <a
-                            href="mailto:planar2006@gmail.com"
-                            class="text-gray-400 hover:text-accent transition-colors duration-300"
-                            ><i class="fas fa-envelope text-2xl"></i
-                        ></a>
-                        <a
-                            href="https://github.com/plan28-06"
-                            target="_blank"
-                            class="text-gray-400 hover:text-accent transition-colors duration-300"
-                            ><i class="fab fa-github text-2xl"></i
-                        ></a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- About Me Card -->
-            <section id="about" class="animate-on-scroll">
-                <h2 class="text-3xl font-bold">About Me</h2>
-                <div
-                    class="card-bg p-8 rounded-xl shadow-md border border-gray-700 mt-6">
-                    <p class="text-gray-300 leading-relaxed">
-                        Enthusiastic computer science undergrad familiar with
-                        technologies like React, Node.js, Express, PostgreSQL,
-                        and Python. Eager to solve real-world problems and
-                        contribute meaningfully to impactful projects.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects" class="animate-on-scroll">
-                <h2 class="text-3xl font-bold">Projects</h2>
-                <div class="grid md:grid-cols-2 gap-6 mt-12">
-                    <!-- File Uploader Card -->
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="text-xl font-bold text-gray-100">
-                            File Uploader
-                        </h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            Full-stack file management platform
-                        </p>
-                        <p class="mt-4 text-gray-300 text-sm leading-relaxed">
-                            Engineered a full-stack file management platform
-                            using Express.js for the backend and EJS for dynamic
-                            server-side rendering. Integrated robust user
-                            authentication via Passport.js, supporting both
-                            traditional login and OAuth2.0 (Google, GitHub).
-                            Enabled secure cloud-based file handling with
-                            Cloudinary for uploads, storage, and retrieval.
-                            Modeled and managed structured data in PostgreSQL
-                            with Prisma ORM, and delivered a responsive UI using
-                            CSS media queries.
-                        </p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Express.js</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >EJS</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Passport.js</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Cloudinary</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >PostgreSQL</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Prisma ORM</span
-                            >
-                        </div>
-                        <div class="mt-4 flex gap-4">
-                            <a
-                                href="https://github.com/plan28-06/file_uploader"
-                                target="_blank"
-                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a
-                                href="https://file-uploader-n6s5.onrender.com/"
-                                target="_blank"
-                                class="live-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full"
-                                target="_blank">
-                                <i class="fa-solid fa-laptop-code"></i> Live
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Contact Management REST API Card -->
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="text-xl font-bold text-gray-100">
-                            Contact Management REST API
-                        </h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            RESTful API for contact management
-                        </p>
-                        <p class="mt-4 text-gray-300 text-sm leading-relaxed">
-                            Designed and implemented a RESTful API for
-                            comprehensive contact management, supporting full
-                            CRUD operations. Deployed MySQL in a Docker
-                            container with Docker volumes to ensure persistent
-                            data storage. Conducted thorough testing of all API
-                            endpoints and workflows using Postman to validate
-                            functionality and reliability.
-                        </p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >REST API</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >MySQL</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Docker</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Postman</span
-                            >
-                        </div>
-                        <div class="mt-4 flex gap-4">
-                            <a
-                                href="https://github.com/plan28-06/Contacts_REST_API"
-                                target="_blank"
-                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Cricket Score Updater Bot Card -->
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="text-xl font-bold text-gray-100">
-                            Cricket Score Updater Bot
-                        </h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            Real-time score updates via WhatsApp
-                        </p>
-                        <p class="mt-4 text-gray-300 text-sm leading-relaxed">
-                            Empowered cricket enthusiasts with instant live
-                            score notifications, minimizing disruption from
-                            manual score checks. Implemented real-time web
-                            scraping with Beautiful Soup (BS4), pulling match
-                            details from Cricbuzz. Streamlined WhatsApp delivery
-                            via Selenium automation, scheduling score updates
-                            every five minutes without user intervention.
-                        </p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Python</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Beautiful Soup</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Selenium</span
-                            >
-                        </div>
-                        <div class="mt-4 flex gap-4">
-                            <a
-                                href="https://github.com/plan28-06/Cricket_Score_Updater"
-                                target="_blank"
-                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Shopping Cart Web App Card -->
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="text-xl font-bold text-gray-100">
-                            Shopping Cart Web App
-                        </h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            E-commerce front-end application
-                        </p>
-                        <p class="mt-4 text-gray-300 text-sm leading-relaxed">
-                            Built an end-to-end shopping cart application with
-                            ReactJS, focusing on real-time product management.
-                            Integrated client-side navigation using React Router
-                            DOM for smooth transitions between pages without
-                            page reloads. Obtained product data dynamically by
-                            using the Fake Store API. Ensured responsive design
-                            using CSS media queries.
-                        </p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >ReactJS</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >React Router DOM</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Fake Store API</span
-                            >
-                        </div>
-                        <div class="mt-4 flex gap-4">
-                            <a
-                                href="https://github.com/plan28-06/Shopping_Cart"
-                                target="_blank"
-                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a
-                                href="https://shoppingcart-2806.netlify.app/"
-                                class="live-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full"
-                                target="_blank">
-                                <i class="fa-solid fa-laptop-code"></i> Live
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- CV App Card -->
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
-                        <h3 class="text-xl font-bold text-gray-100">CV App</h3>
-                        <p class="text-gray-400 text-sm mt-1">
-                            Interactive CV builder
-                        </p>
-                        <p class="mt-4 text-gray-300 text-sm leading-relaxed">
-                            Constructed a React-based CV builder with live-edit
-                            capabilities, instantly previewing changes as users
-                            input details. Utilized React hooks for efficient
-                            state management. Styled the app with CSS and media
-                            queries, ensuring it adapts cleanly across devices.
-                        </p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >ReactJS</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >React Hooks</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >CSS</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Netlify</span
-                            >
-                        </div>
-                        <div class="mt-4 flex gap-4">
-                            <a
-                                href="https://github.com/plan28-06/CVapp"
-                                target="_blank"
-                                class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
-                                <i class="fa-brands fa-github"></i> GitHub
-                            </a>
-                            <a
-                                href="https://cvapp2806.netlify.app/"
-                                class="live-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full"
-                                target="_blank">
-                                <i class="fa-solid fa-laptop-code"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Technical Skills Section -->
-            <section id="skills" class="animate-on-scroll">
-                <h2 class="text-3xl font-bold">Technical Skills</h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
-                        <h3 class="text-xl font-bold text-gray-100 mb-4">
-                            Languages
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Python</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Java</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >JavaScript</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >C</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >C++</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >SQL</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >HTML</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >CSS</span
-                            >
-                        </div>
-                    </div>
-
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
-                        <h3 class="text-xl font-bold text-gray-100 mb-4">
-                            Frameworks & Libraries
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >ReactJS</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >NodeJS</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >ExpressJS</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >EJS</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >PassportJS</span
-                            >
-                        </div>
-                    </div>
-
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
-                        <h3 class="text-xl font-bold text-gray-100 mb-4">
-                            Tools & Tech
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >PostgreSQL</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Prisma ORM</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Git</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >GitHub</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Linux</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Webpack</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >VS Code</span
-                            >
-                            <span
-                                class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
-                                >Docker</span
-                            >
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Education Section -->
-            <section id="education" class="animate-on-scroll">
-                <h2 class="text-3xl font-bold">Education</h2>
-                <div class="timeline mt-6">
-                    <div class="timeline-item">
-                        <div
-                            class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
-                            <div class="flex items-center space-x-4 mb-2">
-                                <!-- SVG Icon for B.Tech -->
-                                <div class="flex-shrink-0 text-accent">
-                                    <svg
-                                        class="h-6 w-6"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24">
-                                        <path
-                                            d="M22 9L12 4 2 9l10 5 10-5zm-10 13L2 17v-6l10 5 10-5v6l-10 5z" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-bold text-gray-100">
-                                    Shiv Nadar University Chennai
-                                </h3>
-                            </div>
-                            <p class="text-gray-300 mt-1">
-                                B.Tech in Computer Science Engineering
-                            </p>
-                            <p class="text-gray-400 text-sm mt-2">
-                                <span class="text-accent font-medium"
-                                    >2023 – 2027</span
-                                >
-                                | CGPA: 9.13 / 10
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Extracurriculars & Volunteering Section -->
-            <section id="extracurriculars" class="animate-on-scroll">
-                <h2 class="text-3xl font-bold">
-                    Extracurriculars & Volunteering
-                </h2>
-                <div class="grid md:grid-cols-2 gap-6 mt-6">
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
-                        <h3 class="text-xl font-bold text-gray-100">
-                            SNUC Coding Club
-                        </h3>
-                        <p class="text-gray-300 mt-1">Member since Aug 2023</p>
-                        <p class="text-gray-400 text-sm mt-2">
-                            Engaged in competitive programming and collaborative
-                            project development, honing problem-solving and
-                            algorithmic skills.
-                        </p>
-                    </div>
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
-                        <h3 class="text-xl font-bold text-gray-100">Karate</h3>
-                        <p class="text-gray-300 mt-1">
-                            Black Belt since May 2015
-                        </p>
-                        <p class="text-gray-400 text-sm mt-2">
-                            Demonstrates discipline and long-term commitment.
-                        </p>
-                    </div>
-                    <div
-                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
-                        <h3 class="text-xl font-bold text-gray-100">
-                            National Service Scheme
-                        </h3>
-                        <p class="text-gray-300 mt-1">Member since Aug 2023</p>
-                        <p class="text-gray-400 text-sm mt-2">
-                            Participated in cleaning campaigns and environmental
-                            talks, fostering a sense of community
-                            responsibility.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="animate-on-scroll">
-                <h2 class="text-3xl font-bold">Get In Touch</h2>
-                <div
-                    class="card-bg p-8 rounded-xl shadow-md border border-gray-700 mt-6 text-center">
-                    <p class="text-lg text-gray-300 mb-4">
-                        I'm always interested in discussing new opportunities,
-                        collaborations, or just connecting with fellow tech
-                        enthusiasts.
-                    </p>
+    <div class="max-w-4xl mx-auto space-y-12 mt-4 sm:mt-0">
+        <section id="hero" class="text-center py-20">
+            <div class="space-y-4 animate-on-scroll is-visible">
+                <h1 class="text-5xl font-bold text-gray-100">
+                    Lakshmi Narayanan P
+                </h1>
+                <p class="text-xl text-gray-400">Software Engineer</p>
+                <div class="flex justify-center space-x-6 pt-4">
+                    <a
+                        href="https://www.linkedin.com/in/lakshmi-narayanan-p-54511b336/"
+                        target="_blank"
+                        class="text-gray-400 hover:text-accent transition-colors duration-300"
+                        ><i class="fab fa-linkedin-in text-2xl"></i
+                    ></a>
                     <a
                         href="mailto:planar2006@gmail.com"
-                        class="text-accent hover:underline text-lg font-medium"
-                        >planar2006@gmail.com</a
-                    >
+                        class="text-gray-400 hover:text-accent transition-colors duration-300"
+                        ><i class="fas fa-envelope text-2xl"></i
+                    ></a>
+                    <a
+                        href="https://github.com/plan28-06"
+                        target="_blank"
+                        class="text-gray-400 hover:text-accent transition-colors duration-300"
+                        ><i class="fab fa-github text-2xl"></i
+                    ></a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <footer class="text-center py-8 text-gray-500 text-sm mt-auto">
-                <p>© 2025 Lakshmi Narayanan P. All rights reserved.</p>
-            </footer>
-        </div>
+        <section id="about" class="animate-on-scroll">
+            <h2 class="text-3xl font-bold">About Me</h2>
+            <div
+                class="card-bg p-8 rounded-xl shadow-md border border-gray-700 mt-6">
+                <p class="text-gray-300 leading-relaxed">
+                    Enthusiastic computer science undergrad familiar with
+                    technologies like React, Node.js, Express, PostgreSQL,
+                    and Python. Eager to solve real-world problems and
+                    contribute meaningfully to impactful projects.
+                </p>
+            </div>
+        </section>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                // Intersection Observer for section animations
-                const sections =
-                    document.querySelectorAll(".animate-on-scroll");
-                const navLinks = document.querySelectorAll(".navbar-link");
+        <section id="projects" class="animate-on-scroll">
+            <h2 class="text-3xl font-bold">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6 mt-12">
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gray-100">
+                        File Uploader
+                    </h3>
+                    <p class="text-gray-400 text-sm mt-1">
+                        Full-stack file management platform
+                    </p>
+                    <ul class="mt-4 text-gray-300 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Engineered a full-stack file management platform
+                            using Express.js for the backend and EJS for dynamic
+                            server-side rendering.</li>
+                        <li>Integrated robust user
+                            authentication via Passport.js, supporting both
+                            traditional login and OAuth2.0 (Google, GitHub).</li>
+                        <li>Enabled secure cloud-based file handling with
+                            Cloudinary for uploads, storage, and retrieval.</li>
+                        <li>Modeled and managed structured data in PostgreSQL
+                            with Prisma ORM, and delivered a responsive UI using
+                            CSS media queries.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Express.js</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >EJS</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Passport.js</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Cloudinary</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >PostgreSQL</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Prisma ORM</span
+                        >
+                    </div>
+                    <div class="mt-4 flex gap-4">
+                        <a
+                            href="https://github.com/plan28-06/file_uploader"
+                            target="_blank"
+                            class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a
+                            href="https://file-uploader-n6s5.onrender.com/"
+                            target="_blank"
+                            class="live-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full"
+                            target="_blank">
+                            <i class="fa-solid fa-laptop-code"></i> Live
+                        </a>
+                    </div>
+                </div>
 
-                const observerOptions = {
-                    root: null,
-                    rootMargin: "0px",
-                    threshold: 0.2, // Trigger when 20% of the element is visible
-                };
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gray-100">
+                        Contact Management REST API
+                    </h3>
+                    <p class="text-gray-400 text-sm mt-1">
+                        RESTful API for contact management
+                    </p>
+                    <ul class="mt-4 text-gray-300 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Designed and implemented a RESTful API for
+                            comprehensive contact management, supporting full
+                            CRUD operations.</li>
+                        <li>Deployed MySQL in a Docker
+                            container with Docker volumes to ensure persistent
+                            data storage.</li>
+                        <li>Conducted thorough testing of all API
+                            endpoints and workflows using Postman to validate
+                            functionality and reliability.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Express.js</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >MySQL</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Docker</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Postman</span
+                        >
+                    </div>
+                    <div class="mt-4 flex gap-4">
+                        <a
+                            href="https://github.com/plan28-06/Contacts_REST_API"
+                            target="_blank"
+                            class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
 
-                const sectionObserver = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("is-visible");
-                        } else {
-                            entry.target.classList.remove("is-visible");
-                        }
-                    });
-                }, observerOptions);
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gray-100">
+                        Cricket Score Updater Bot
+                    </h3>
+                    <p class="text-gray-400 text-sm mt-1">
+                        Real-time score updates via WhatsApp
+                    </p>
+                    <ul class="mt-4 text-gray-300 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Empowered cricket enthusiasts with instant live
+                            score notifications, minimizing disruption from
+                            manual score checks.</li>
+                        <li>Implemented real-time web
+                            scraping with Beautiful Soup (BS4), pulling match
+                            details from Cricbuzz.</li>
+                        <li>Streamlined WhatsApp delivery
+                            via Selenium automation, scheduling score updates
+                            every five minutes without user intervention.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Python</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Beautiful Soup</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Selenium</span
+                        >
+                    </div>
+                    <div class="mt-4 flex gap-4">
+                        <a
+                            href="https://github.com/plan28-06/Cricket_Score_Updater"
+                            target="_blank"
+                            class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
 
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gray-100">
+                        Shopping Cart Web App
+                    </h3>
+                    <p class="text-gray-400 text-sm mt-1">
+                        E-commerce front-end application
+                    </p>
+                    <ul class="mt-4 text-gray-300 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Built an end-to-end shopping cart application with
+                            ReactJS, focusing on real-time product management.</li>
+                        <li>Integrated client-side navigation using React Router
+                            DOM for smooth transitions between pages without
+                            page reloads.</li>
+                        <li>Obtained product data dynamically by
+                            using the Fake Store API.</li>
+                        <li>Ensured responsive design
+                            using CSS media queries.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >ReactJS</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >React Router DOM</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Fake Store API</span
+                        >
+                    </div>
+                    <div class="mt-4 flex gap-4">
+                        <a
+                            href="https://github.com/plan28-06/Shopping_Cart"
+                            target="_blank"
+                            class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a
+                            href="https://shoppingcart-2806.netlify.app/"
+                            class="live-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full"
+                            target="_blank">
+                            <i class="fa-solid fa-laptop-code"></i> Live
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-bold text-gray-100">CV App</h3>
+                    <p class="text-gray-400 text-sm mt-1">
+                        Interactive CV builder
+                    </p>
+                    <ul class="mt-4 text-gray-300 text-sm leading-relaxed list-disc list-inside space-y-2">
+                        <li>Constructed a React-based CV builder with live-edit
+                            capabilities, instantly previewing changes as users
+                            input details.</li>
+                        <li>Utilized React hooks for efficient
+                            state management.</li>
+                        <li>Styled the app with CSS and media
+                            queries, ensuring it adapts cleanly across devices.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >ReactJS</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >React Hooks</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >CSS</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Netlify</span
+                        >
+                    </div>
+                    <div class="mt-4 flex gap-4">
+                        <a
+                            href="https://github.com/plan28-06/CVapp"
+                            target="_blank"
+                            class="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-gray-600 transition-colors duration-200">
+                            <i class="fa-brands fa-github"></i> GitHub
+                        </a>
+                        <a
+                            href="https://cvapp2806.netlify.app/"
+                            class="live-btn flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full"
+                            target="_blank">
+                            <i class="fa-solid fa-laptop-code"></i> Live
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="animate-on-scroll">
+            <h2 class="text-3xl font-bold">Technical Skills</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
+                    <h3 class="text-xl font-bold text-gray-100 mb-4">
+                        Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Python</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Java</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >JavaScript</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >C</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >C++</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >SQL</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >HTML</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >CSS</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
+                    <h3 class="text-xl font-bold text-gray-100 mb-4">
+                        Frameworks & Libraries
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >ReactJS</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >NodeJS</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >ExpressJS</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >EJS</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >PassportJS</span
+                        >
+                    </div>
+                </div>
+
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
+                    <h3 class="text-xl font-bold text-gray-100 mb-4">
+                        Tools & Tech
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >PostgreSQL</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Prisma ORM</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Git</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >GitHub</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Linux</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Webpack</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >VS Code</span
+                        >
+                        <span
+                            class="tag-bg px-3 py-1 rounded-full text-sm font-medium tag-text"
+                            >Docker</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="animate-on-scroll">
+            <h2 class="text-3xl font-bold">Education</h2>
+            <div class="timeline mt-6">
+                <div class="timeline-item">
+                    <div
+                        class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
+                        <div class="flex items-center space-x-4 mb-2">
+                            <div class="flex-shrink-0 text-accent">
+                                <svg
+                                    class="h-6 w-6"
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 9L12 4 2 9l10 5 10-5zm-10 13L2 17v-6l10 5 10-5v6l-10 5z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-100">
+                                Shiv Nadar University Chennai
+                            </h3>
+                        </div>
+                        <p class="text-gray-300 mt-1">
+                            B.Tech in Computer Science Engineering
+                        </p>
+                        <p class="text-gray-400 text-sm mt-2">
+                            <span class="text-accent font-medium"
+                                >2023 – 2027</span
+                            >
+                            | CGPA: 9.13 / 10
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="extracurriculars" class="animate-on-scroll">
+            <h2 class="text-3xl font-bold">
+                Extracurriculars & Volunteering
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
+                    <h3 class="text-xl font-bold text-gray-100">
+                        SNUC Coding Club
+                    </h3>
+                    <p class="text-gray-300 mt-1">Member since Aug 2023</p>
+                    <p class="text-gray-400 text-sm mt-2">
+                        Engaged in competitive programming and collaborative
+                        project development, honing problem-solving and
+                        algorithmic skills.
+                    </p>
+                </div>
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
+                    <h3 class="text-xl font-bold text-gray-100">Karate</h3>
+                    <p class="text-gray-300 mt-1">
+                        Black Belt since May 2015
+                    </p>
+                    <p class="text-gray-400 text-sm mt-2">
+                        Demonstrates discipline and long-term commitment.
+                    </p>
+                </div>
+                <div
+                    class="card-bg p-6 rounded-xl shadow-md border border-gray-700">
+                    <h3 class="text-xl font-bold text-gray-100">
+                        National Service Scheme
+                    </h3>
+                    <p class="text-gray-300 mt-1">Member since Aug 2023</p>
+                    <p class="text-gray-400 text-sm mt-2">
+                        Participated in cleaning campaigns and environmental
+                        talks, fostering a sense of community
+                        responsibility.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="animate-on-scroll">
+            <h2 class="text-3xl font-bold">Get In Touch</h2>
+            <div
+                class="card-bg p-8 rounded-xl shadow-md border border-gray-700 mt-6 text-center">
+                <p class="text-lg text-gray-300 mb-4">
+                    I'm always interested in discussing new opportunities,
+                    collaborations, or just connecting with fellow tech
+                    enthusiasts.
+                </p>
+                <a
+                    href="mailto:planar2006@gmail.com"
+                    class="text-accent hover:underline text-lg font-medium"
+                    >planar2006@gmail.com</a
+                >
+            </div>
+        </section>
+
+        <footer class="text-center py-8 text-gray-500 text-sm mt-auto">
+            <p>© 2025 Lakshmi Narayanan P. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Intersection Observer for section animations
+            const sections =
+                document.querySelectorAll(".animate-on-scroll");
+            const navLinks = document.querySelectorAll(".navbar-link");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.2, // Trigger when 20% of the element is visible
+            };
+
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                    } else {
+                        entry.target.classList.remove("is-visible");
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach((section) => {
+                sectionObserver.observe(section);
+            });
+
+            // Active nav link on scroll
+            window.addEventListener("scroll", () => {
+                let current = "";
                 sections.forEach((section) => {
-                    sectionObserver.observe(section);
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                        current = section.getAttribute("id");
+                    }
                 });
 
-                // Active nav link on scroll
-                window.addEventListener("scroll", () => {
-                    let current = "";
-                    sections.forEach((section) => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.clientHeight;
-                        if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                            current = section.getAttribute("id");
-                        }
-                    });
-
-                    navLinks.forEach((link) => {
-                        link.classList.remove("active");
-                        if (link.href.includes(current)) {
-                            link.classList.add("active");
-                        }
-                    });
-                });
-
-                // Smooth scroll for nav links
                 navLinks.forEach((link) => {
-                    link.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute("href").substring(1);
-                        document.getElementById(targetId).scrollIntoView({
-                            behavior: "smooth",
-                        });
+                    link.classList.remove("active");
+                    if (link.href.includes(current)) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+
+            // Smooth scroll for nav links
+            navLinks.forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    document.getElementById(targetId).scrollIntoView({
+                        behavior: "smooth",
                     });
                 });
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
 </html>
