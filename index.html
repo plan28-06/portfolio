@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lakshmi Narayanan P – Computer Science student and NLP/LLM researcher at Shiv Nadar University Chennai.">
+    <title>Lakshmi Narayanan P</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <header class="header">
+                <h1 class="name">Lakshmi Narayanan P</h1>
+                <p class="subtitle">B.Tech Computer Science student at Shiv Nadar University Chennai, and Research Intern at IIT Madras</p>
+                <img src="profile_photo.jpeg" alt="Lakshmi Narayanan P" class="profile-pic">
+                <p class="location">Chennai, India</p>
+            </header>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about" class="active">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#extracurriculars">Extracurriculars</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="content-column">
+            <main class="main">
+                <section id="about">
+                    <h2 class="section-title">About</h2>
+                    <div class="content">
+                        <p>I'm a Computer Science undergraduate at Shiv Nadar University Chennai, graduating in May 2027. My research interests are <strong>Natural Language Processing</strong>, <strong>Large Language Models</strong>, <strong>Information Extraction</strong>, <strong>Retrieval-Augmented Generation</strong>, and <strong>Trustworthy AI and Safe AI</strong>, with a focus on how reliable and well-evaluated LLM systems are.</p>
+                        <p>I'm currently a research intern in the Materials Informatics Lab at IIT Madras under <strong>Prof. Rohit Batra</strong>, where I work on LLM-based data extraction.</p>
+                    </div>
+                </section>
+
+                <section id="education">
+                    <h2 class="section-title">Education</h2>
+                    <div class="content">
+                        <div class="edu-item">
+                            <h3>Shiv Nadar University Chennai</h3>
+                            <p class="degree">Bachelor of Technology in Computer Science</p>
+                            <p class="meta">Aug 2023 – May 2027 · GPA: 9.09/10 · Rank: 4/120</p>
+                            <p class="coursework">Relevant coursework: <strong>Artificial Intelligence</strong>, <strong>Machine Learning</strong>, <strong>Linear Algebra</strong>, <strong>Probability and Statistics</strong>, <strong>Discrete Mathematics and Graph Theory</strong>, <strong>Calculus and Numerical Methods</strong>, <strong>Data Structures</strong>, <strong>Design and Analysis of Algorithms</strong>, <strong>Operating Systems</strong>, <strong>Database Management Systems</strong>, <strong>Object-Oriented Programming</strong>, <strong>Computer Networks</strong>, <strong>Distributed Computing</strong>, <strong>Computer Organization and Architecture</strong></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experience">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="content">
+                        <div class="exp-item">
+                            <p class="exp-date">Jan 2027 – Apr 2027 (Incoming)</p>
+                            <h3>Research Intern @ Indian Institute of Technology Madras</h3>
+                            <ul>
+                                <li>Returning to the Materials Informatics Lab to continue research on <strong>LLMs</strong> under the guidance of Prof. Rohit Batra</li>
+                            </ul>
+                        </div>
+                        <div class="exp-item">
+                            <p class="exp-date">May 2026 – Jul 2026</p>
+                            <h3>Research Intern @ Indian Institute of Technology Madras</h3>
+                            <ul>
+                                <li>Worked in the Materials Informatics Lab under Prof. Rohit Batra on <strong>LLM-based materials data extraction</strong></li>
+                                <li>Co-developed a planner-guided, <strong>multi-stage LLM pipeline</strong> to extract structured data from materials science literature, with planning, memory, extraction, verification, and collation stages</li>
+                                <li>Built two <strong>LLM-as-a-judge</strong> evaluation pipelines: one scoring faithfulness, completeness, and grounding, and another comparing extractions against manually created ground truth on precision, recall, and F1-score</li>
+                                <li>Used evaluation results to drive iterative improvements, refining prompts and feedback loops to improve extraction accuracy and reliability</li>
+                                <li>Established a response–feedback loop between the verification–extraction and memory–retrieval stages</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="publications">
+                    <h2 class="section-title">Publications</h2>
+                    <div class="content">
+                        <div class="project-item">
+                            <h3>An Experimental Study of Hybrid Retrieval, NLI and Open-source LLMs for Scientific Claim Verification</h3>
+                            <p>Lakshmi Narayanan P, Narenkarthik K, Naren Kumar C.</p>
+                            <p>International Conference on AI-Driven Computing and Secure Systems (AegisAI 27). Proceedings to be published in the Scopus-indexed Springer IFIP-AICT series. <em>(Under review)</em></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="content">
+                        <div class="project-item">
+                            <h3>Scientific Claim Verification Pipeline</h3>
+                            <p>A hybrid claim verification pipeline combining <strong>DeBERTa NLI</strong> and open-source <strong>LLMs</strong> with an agreement-based fusion strategy. Hybrid evidence retrieval with <strong>Sentence Transformers</strong> and <strong>BM25</strong> improved MRR and mean Recall over standalone approaches.</p>
+                            <p>Of three NLI evidence aggregation strategies on the SciFact dev split, relevance-weighted aggregation performed best (0.724 macro-F1 vs. 0.645 and 0.571). On a 2,035-claim benchmark built from SciFact and CliniFact, standalone LLMs (best: Qwen3 8B, 0.79 macro-F1) substantially outperformed DeBERTa NLI (0.32). The agreement-based hybrid (best: 0.74) did not surpass its standalone LLM, due to frequent disagreements between NLI and LLM verdicts.</p>
+                            <p class="tags">Python · DeBERTa · Sentence Transformers · BM25 · LLMs</p>
+                            <p class="links"><a href="https://github.com/plan28-06/Scientific_Claim_Verification_Pipeline" target="_blank" rel="noopener">GitHub</a></p>
+                        </div>
+                        <div class="project-item">
+                            <h3>Materials Science Jargon Simplifier</h3>
+                            <p>A text simplification system built by fine-tuning <strong>BART-base</strong>. I extracted 1,000 materials science abstracts, used <strong>Llama 3.1 8B</strong> to generate simplified versions, and trained on the original–simplified pairs. Improved the Flesch Reading Ease score from −1.03 to 44.83, and served the model through a <strong>FastAPI</strong> backend.</p>
+                            <p class="tags">Python · BART · Llama 3.1 · FastAPI</p>
+                            <p class="links"><a href="https://github.com/plan28-06/Material_Science_Jargon_Simplifier" target="_blank" rel="noopener">GitHub</a></p>
+                        </div>
+                        <div class="project-item">
+                            <h3>Real-Time Chat App</h3>
+                            <p>A real-time messaging application with <strong>Socket.io</strong>, <strong>ReactJS</strong>, <strong>NodeJS</strong>, <strong>ExpressJS</strong>, and <strong>MongoDB</strong>. Includes JWT authentication, cookie-based sessions, Cloudinary profile image uploads, REST endpoints for user management and message storage, Zustand state management, and a responsive UI.</p>
+                            <p class="tags">NodeJS · ExpressJS · MongoDB · ReactJS · Socket.io</p>
+                            <p class="links"><a href="https://github.com/plan28-06/chat_app" target="_blank" rel="noopener">GitHub</a> · <a href="https://chat-app-ao2f.onrender.com/" target="_blank" rel="noopener">Website</a></p>
+                        </div>
+                        <div class="project-item">
+                            <h3>File Uploader Web App</h3>
+                            <p>A full-stack file management platform with <strong>ExpressJS</strong> and server-side rendering in <strong>EJS</strong>. Supports traditional login and <strong>OAuth2.0</strong> (Google, GitHub) through PassportJS, stores files securely with Cloudinary, and models data in <strong>PostgreSQL</strong> with <strong>Prisma ORM</strong>.</p>
+                            <p class="tags">NodeJS · ExpressJS · PostgreSQL · Prisma · EJS · Cloudinary · OAuth2.0</p>
+                            <p class="links"><a href="https://github.com/plan28-06/file_uploader" target="_blank" rel="noopener">GitHub</a> · <a href="https://file-uploader-n6s5.onrender.com/" target="_blank" rel="noopener">Website</a></p>
+                        </div>
+                        <div class="project-item">
+                            <h3>Music Genre Classification</h3>
+                            <p>Extracted <strong>MFCC</strong>, chroma, spectral, and rhythm features from audio with <strong>Librosa</strong>, and trained an <strong>XGBoost</strong> classifier for multi-class genre prediction (0.78 accuracy). Built a <strong>FastAPI</strong> backend for audio uploads and predictions, and deployed it on Render.</p>
+                            <p class="tags">Python · librosa · scikit-learn · XGBoost · FastAPI</p>
+                            <p class="links"><a href="https://github.com/plan28-06/Music_Genre_Classification" target="_blank" rel="noopener">GitHub</a> · <a href="https://plan28-06.github.io/Music_Genre_Classification" target="_blank" rel="noopener">Website</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="content">
+                        <p><strong>Languages and databases:</strong> Java, Python, C, C++, JavaScript, HTML, CSS, SQL, MongoDB, PostgreSQL</p>
+                        <p><strong>Frameworks and libraries:</strong> PyTorch, Scikit-learn, Pandas, NumPy, Librosa, ReactJS, NodeJS, ExpressJS, PassportJS</p>
+                        <p><strong>AI:</strong> Machine Learning, Deep Learning, LLMs</p>
+                        <p><strong>Tools:</strong> Prisma ORM, Git, GitHub, Linux, Webpack, VS Code</p>
+                    </div>
+                </section>
+
+                <section id="certifications">
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="content">
+                        <ul class="plain-list">
+                            <li>Machine Learning Specialization, Stanford University (DeepLearning.AI) · <a href="https://coursera.org/verify/specialization/21T4FJTEG5IY" target="_blank" rel="noopener">Verify</a></li>
+                            <li>Programming in Java, IIT Kharagpur (NPTEL) · <a href="https://github.com/plan28-06/nptel" target="_blank" rel="noopener">Verify</a></li>
+                            <li>Affective Computing, IIIT Delhi (NPTEL) · <a href="https://github.com/plan28-06/nptel" target="_blank" rel="noopener">Verify</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="extracurriculars">
+                    <h2 class="section-title">Extracurriculars</h2>
+                    <div class="content">
+                        <div class="exp-item">
+                            <p class="exp-date">Jul 2026 – May 2027</p>
+                            <h3>Core Committee Member, Omnia @ Shiv Nadar University Chennai</h3>
+                            <ul>
+                                <li>Student-run club dedicated to inclusivity, human welfare, and animal welfare</li>
+                                <li>Delegate tasks among committee members and volunteers, organize campus events, and coordinate joint initiatives with other student clubs</li>
+                            </ul>
+                        </div>
+                        <div class="exp-item">
+                            <p class="exp-date">Jul 2026 – May 2027</p>
+                            <h3>Editorial Member, Scintilla @ Shiv Nadar University Chennai</h3>
+                            <ul>
+                                <li>Part of the editorial team of the university's student-run magazine, managing submissions and selecting the content featured in each edition</li>
+                            </ul>
+                        </div>
+                        <div class="exp-item">
+                            <p class="exp-date">May 2023 – May 2027</p>
+                            <h3>Volunteer, National Service Scheme (NSS)</h3>
+                            <ul>
+                                <li>Took part in beach cleaning initiatives to promote environmental conservation</li>
+                                <li>Helped organize awareness programs with guest speakers on environmental sustainability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <p>Contact: <a href="mailto:planar2006@gmail.com">planar2006@gmail.com</a></p>
+                <p class="links">
+                    <a href="https://www.linkedin.com/in/lakshmi-narayanan-p-54511b336/" target="_blank" rel="noopener">LinkedIn</a> ·
+                    <a href="https://github.com/plan28-06" target="_blank" rel="noopener">GitHub</a>
+                </p>
+                <p>&copy; <span id="current-year"></span> Lakshmi Narayanan P</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
