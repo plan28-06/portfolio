@@ -20,7 +20,12 @@ html {
 }
 
 body {
-    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family:
+        "Source Sans 3",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: var(--text);
@@ -60,7 +65,7 @@ body {
 }
 
 .name {
-    font-family: 'Libre Baskerville', Georgia, serif;
+    font-family: "Libre Baskerville", Georgia, serif;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
@@ -121,7 +126,7 @@ body {
 }
 
 .section-title {
-    font-family: 'Libre Baskerville', Georgia, serif;
+    font-family: "Libre Baskerville", Georgia, serif;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 1rem;
@@ -256,6 +261,25 @@ a:hover {
     text-align: center;
     font-size: 0.95rem;
     color: var(--text-muted);
+}
+
+/* Relevant coursework heading */
+.edu-item .coursework-heading {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Project bullets (matches experience bullets) */
+.project-item ul {
+    margin-left: 1.25rem;
+    margin-bottom: 0.35rem;
+}
+
+.project-item li {
+    margin-bottom: 0.25rem;
 }
 
 .footer p {
